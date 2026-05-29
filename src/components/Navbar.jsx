@@ -41,7 +41,7 @@ export default function Navbar() {
   const navItems = [
     { label: 'Home', id: 'home', href: '#' },
     { label: 'About', id: 'about', href: '#about' },
-    { label: 'Work', id: 'experience', href: '#experience' },
+    { label: 'Experience', id: 'experience', href: '#experience' },
     { label: 'Projects', id: 'projects', href: '#projects' },
     { label: 'Skills', id: 'skills', href: '#skills' }
   ];
@@ -50,17 +50,24 @@ export default function Navbar() {
     <div className="w-full pt-0 md:pt-6 px-0 md:px-4 flex flex-col items-center sticky top-0 z-50 transition-all duration-300 relative">
       {/* Navbar header */}
       <header 
-        className={`w-full md:w-full max-w-none md:max-w-2xl lg:max-w-3xl rounded-none md:rounded-full px-6 md:px-5 py-4 md:py-2.5 flex items-center justify-between transition-all duration-300 ease-in-out border-x-0 border-t-0 border-b md:border-2 bg-transparent ${
-          scrolled 
-            ? 'bg-white/45 md:bg-white/60 border-slate-200/50 backdrop-blur-md shadow-sm' 
-            : 'border-transparent'
-        }`}
+        className={`w-full md:w-full max-w-none md:max-w-[500px] lg:max-w-[540px] rounded-none md:rounded-full px-6 md:px-5 py-4 md:py-2.5 flex items-center justify-between transition-all duration-300 ease-in-out border-b md:border bg-[#242130]/90 border-slate-800/80 backdrop-blur-md shadow-lg`}
       >
-        {/* Empty left div to maintain spacing balance */}
-        <div className="w-6 h-6 md:hidden" />
+        {/* Left: Avatar container with white background */}
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white">
+            <img 
+              src="/Rohan.png" 
+              alt="Rohan avatar" 
+              className="w-full h-full object-cover object-top"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </div>
+        </div>
 
         {/* Center: Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-normal">
           {navItems.map((item) => (
             <a 
               key={item.id}
@@ -68,7 +75,7 @@ export default function Navbar() {
               className={`transition-all duration-300 hover:scale-105 ${
                 activeSection === item.id 
                   ? 'text-orange-500 font-bold' 
-                  : 'text-slate-600 hover:text-slate-200'
+                  : 'text-slate-300 hover:text-white font-normal'
               }`}
             >
               {item.label}
@@ -80,7 +87,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <a 
             href="#contact" 
-            className="hidden md:inline-flex bg-[#1e1b29] text-white hover:bg-slate-800 hover:scale-105 transition-all duration-300 text-sm font-bold px-6 py-2 rounded-full shrink-0 shadow-sm"
+            className="hidden md:inline-flex bg-white text-[#181620] hover:bg-slate-200 hover:scale-105 transition-all duration-300 text-sm font-bold px-6 py-2 rounded-full shrink-0 shadow-sm"
           >
             Contact
           </a>
@@ -88,7 +95,7 @@ export default function Navbar() {
           {/* Hamburger button */}
           <button 
             onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-slate-700 hover:text-slate-900 hover:bg-slate-200/50 transition-colors"
+            className="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
           >
             <Menu size={20} />
           </button>

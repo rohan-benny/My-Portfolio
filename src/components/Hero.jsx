@@ -9,15 +9,16 @@ export default function Hero() {
   return (
     <section 
       id="hero" 
-      className="flex flex-col items-start justify-center md:grid md:grid-cols-[auto_auto_auto] grid-rows-[auto_auto_auto] items-center gap-y-4 md:gap-y-0 md:gap-x-10 max-w-fit mx-auto pt-0 pb-12 md:py-12 min-h-[70vh] -translate-y-10 md:-translate-x-12 md:-translate-y-20 overflow-visible px-6 sm:px-0"
+      className="flex flex-col items-start justify-center md:grid md:grid-cols-[auto_auto_auto] grid-rows-[auto_auto_auto] items-center gap-y-4 md:gap-y-0 md:gap-x-10 max-w-fit mx-auto pt-0 pb-12 md:py-12 min-h-[70vh] -translate-y-10 md:translate-x-0 md:translate-y-0 overflow-visible px-6 sm:px-0"
     >
 
       {/* Rohan Benny */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-        className="relative top-[12px] md:top-[36px] md:col-start-1 md:row-start-1 md:justify-self-start md:self-end pb-0"
+        className="relative top-[12px] md:top-[36px] md:col-start-1 md:row-start-1 md:justify-self-end md:self-end pb-0 text-left md:text-right"
       >
         <span className="text-[#606060] font-bold text-xl sm:text-2xl md:text-3xl tracking-wide font-body uppercase">
           Rohan Benny
@@ -27,10 +28,11 @@ export default function Hero() {
       {/* SOFTWARE */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         whileHover={{ scale: 1.02 }}
-        className="md:col-start-1 md:row-start-2 md:justify-self-start md:self-center md:mt-[6px] cursor-default"
+        className="md:col-start-1 md:row-start-2 md:justify-self-end md:self-center md:mt-[6px] cursor-default text-left md:text-right"
       >
         <h1 className="text-[2.8rem] xs:text-[3.8rem] sm:text-[5rem] md:text-[6.8rem] leading-[0.8] font-heading font-bold text-[#1e1b29] tracking-tight">
           SOFTWARE
@@ -40,7 +42,8 @@ export default function Hero() {
       {/* Photo Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.93 }}
-        animate={{ opacity: 1, scale: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
         whileHover={{
           scale: 1.03,
           rotate: 1.5,
@@ -54,7 +57,7 @@ export default function Hero() {
             <img
               src="/Rohan.png"
               alt="Rohan Benny portrait"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top rounded-[1.25rem]"
               onError={() => setHeroError(true)}
             />
           ) : (
@@ -74,10 +77,11 @@ export default function Hero() {
       {/* DEVELOPER */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         whileHover={{ scale: 1.02 }}
-        className="md:col-start-3 md:row-start-2 md:justify-self-start md:self-center md:mt-[6px] cursor-default"
+        className="md:col-start-3 md:row-start-2 md:justify-self-start md:self-center md:mt-[6px] cursor-default text-left"
       >
         <h1 className="text-[2.8rem] xs:text-[3.8rem] sm:text-[5rem] md:text-[6.8rem] leading-[0.8] font-heading font-bold text-[#1e1b29] tracking-tight">
           DEVELOPER
@@ -87,11 +91,12 @@ export default function Hero() {
       {/* Description */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="justify-self-center md:justify-self-end self-start pt-0.5 md:-mt-[10px] max-w-[300px]"
+        className="justify-self-start md:col-start-3 md:row-start-3 md:justify-self-start self-start pt-0.5 md:-mt-[12px] max-w-[300px]"
       >
-        <p className="text-orange-500 font-body text-sm md:text-[14px] font-bold leading-tight text-center md:text-right">
+        <p className="text-orange-500 font-body text-xs md:text-[13px] font-bold leading-tight text-left">
           MCA student passionate about modern <br className="hidden md:inline" /> software development.
         </p>
       </motion.div>
