@@ -23,6 +23,9 @@ export const metadata = {
   title: "Rohan Benny | Android & Web Developer Portfolio",
   description: "Personal portfolio of Rohan Benny, MCA Postgraduate and Developer specialising in Android, Web, and Full-stack development.",
   keywords: ["Rohan Benny", "Portfolio", "Software Developer", "Android Developer", "Web Developer", "Kristu Jayanti", "Beepeaks"],
+  icons: {
+    icon: "/Rohan.png",
+  },
 }
 
 export default function RootLayout({ children }) {
